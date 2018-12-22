@@ -1,0 +1,38 @@
+通过动态路由传递参数时 比如 {path:'/home/:goodId=123'}$router.params.goodId 进行获取
+通过编程式路由进行传递 比如 this.$router.push('/market?goodId=123')  通过$router.query.goodId 来获取
+
+父子组件可以进行值传递，但是只能通过父组件来修改子组件的数据 props 单向的
+                    子组件可以通过$emit来触发父组件的自定义事件，来改变父组件的数值
+
+
+#################################################################################
+
+vue-resource篇:拦截器
+ Vue.http.interceptors.push(function(request,next){
+    console.log('请求初始化初始化');        ========> 在请求发送之前的处理
+    next(function(response){             ========> 在请求发送之后的处理
+      console.log('请求已经结束');
+    })
+ })
+
+ http: {
+  root:"http:192.168.1.02"        //封装公共地址,方便进行url拼接
+ },
+
+#################################################################################
+
+es6新语法:
+
+let 块级作用域
+{
+  let a = 1
+  var b = 1
+}
+代码块外部无法调用a,可以调用b
+
+const 常量
+const c = 1 //定义之后无法更改
+const d = {e:2}
+ d.e = 3    //true
+ d = {c:1}  //error
+ 总结:通过const定义时会开辟一片内存空间,只是把d.e的值更改，而d的内存空间没有更改

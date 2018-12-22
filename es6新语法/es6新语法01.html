@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+  <div id="test">
+
+  </div>
+  <script>
+    //演示es6字符串拼接
+    let userName = 'Jack'
+    printLog(`im ${userName}`)   //不用es5中的+拼接字符串,使用${}
+    //定义一个赋值方法
+    function printLog(str) {
+      document.getElementById('test').innerText = str
+    }
+
+    //###############################################################################
+
+    //演示添加参数默认值
+    function add(flag = true){
+      if (flag){
+        return 'true'
+      }else {
+        return 'error'
+      }
+    }
+    console.log(add())
+
+    //###############################################################################
+
+    //箭头函数的演示
+    //箭头函数的优点，代码简洁，避免作用域问题
+    let arr = [1,2,3]
+    let newArr = arr.map((item)=>{
+      console.log(item)
+      return item+5
+    })
+    console.log(newArr)
+
+    //###############################################################################
+    //es6解构
+    let [a,b] = [1,2] //数组的分解一一对应
+    let [x,y,z] = 'ZCF'
+  </script>
+  <style>
+    #test{
+      width: 200px;
+      height: 120px;
+      background-color: antiquewhite;
+      color: red;
+    }
+  </style>
+</body>
+</html>

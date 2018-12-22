@@ -1,0 +1,24 @@
+{
+    "status":"0",
+    "msg":"",
+    "result":[
+      {
+        "commodityId":"10001",
+        "commodityName":"显卡",
+        "commodityPrice":8888,
+        "commodityImg":"commodity10001.jpeg"
+      },
+      {
+        "commodityId":"10002",
+        "commodityName":"小米手机",
+        "commodityPrice":888,
+        "commodityImg":"commodity10002.jpg"
+      },
+      {
+        "commodityId":"10003",
+        "commodityName":"单反",
+        "commodityPrice":5300,
+        "commodityImg":"commodity10003.jpg"
+      }
+    ]
+}

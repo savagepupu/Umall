@@ -1,0 +1,43 @@
+1.Vuex是为vue应用程序开发的状态管理模式
+2.当我们构建一个大型的应用程序时，Vuex可以更好的帮助我们在组件外部统一管理状态
+3.Vuex核心概念  vuex的对象：store 通常通过:this.$store取到这个对象
+
+   Getters:派生一些新的状态
+  （关键）State:载体,将组件的状态提取放入其中
+  (关键) Mutations:更改Vuex中的store中的状态唯一的方法是提交mutation
+  Actions:提交mutation，不直接改变状态,可以包含任意异步操作
+  Modules:当状态管理比较复杂，需要将VUex store对象分割成模块(modules)
+
+4.实例
+const store = new Vuex.Store({
+  state:{
+    count:1
+  },
+  //改变状态
+  mutation:{
+    increment(state){
+      state.count++
+    }
+  },
+  //也可以通过actions提交,主要用来提交异步
+  actions:{
+    increment(context){
+      context.commit('increment')
+    }
+  }
+})
+
+//调用这个mutation
+store.commit('increment')
+
+
+使用方法：
+1.创建Vuex实例store,并且注册到vue实例中,包含state:{count:1}
+2.在需要使用该状态的组件中定义computed时时计算，通过count(){return this.$store.state.count} 来取
+3.通过  mutation:{
+          //定义一个函数，接受参数state
+          increment(state){state.count++}
+          }
+       this.$store.commit('increment') //进行触发改变state
+
+

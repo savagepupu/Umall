@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es6promise</title>
+</head>
+<body>
+  <script>
+    let checkLogin = function(){
+      return new Promise(function (resolve,reject) {
+        let flag = document.cookie.indexOf('userId')>-1?true:false;
+
+        if (flag){
+          resolve({
+            status:0,
+            result:true
+          })
+        }else {
+          reject("error")
+        }
+      })
+    }
+
+    checkLogin().then((res) => {
+      if(res.stat() === 0){
+        console.log('true')
+      }
+    }).catch(
+      (error)=>console.log('error')
+    )
+  </script>
+</body>
+</html>

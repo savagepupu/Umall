@@ -1,0 +1,6 @@
+1.pwd
+/usr/local/mongodb/bin
+sudo ./mongod  -dbpath /data/db/
+
+2.需要另打开一个终端
+./mongo
